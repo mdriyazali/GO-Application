@@ -1,0 +1,18 @@
+replicaCount: 3
+
+image:
+  repository: mdriyazali254362028/myapp
+  pullPolicy: Always
+  tag: latest
+
+service:
+  type: ClusterIP
+  port: 8080
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 200m
+    memory: 256Mi
