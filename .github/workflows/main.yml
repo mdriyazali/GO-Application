@@ -31,7 +31,7 @@ jobs:
       run: |
         docker tag myapp:latest mdriyazali254362028/myapp:latest
         echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
-        docker push <dockerhub-username>/myapp:latest
+        docker push mdriyazali254362028/myapp:latest
 
   deploy:
     runs-on: ubuntu-latest
@@ -44,4 +44,4 @@ jobs:
         version: v1.21.0
 
     - name: Deploy with Helm
-      run: helm upgrade --install myapp ./helm --set image.repository=<dockerhub-username>/myapp --set image.tag=latest
+      run: helm upgrade --install myapp ./helm --set image.repository=mdriyazali254362028/myapp --set image.tag=latest
